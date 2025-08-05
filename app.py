@@ -11,8 +11,19 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 # Initialize Firebase
-cred = credentials.Certificate("firebase_config.json")  # Admin SDK JSON
+
+import json
+from firebase_admin import credentials
+
+cred_data = json.loads(os.environ["GOOGLE_APPLICATION_CREDENTIALS_JSON"])
+cred = credentials.Certificate(cred_data)
 firebase_admin.initialize_app(cred)
+
+
+
+
+# cred = credentials.Certificate("firebase_config.json")  # Admin SDK JSON
+# firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 # ---------------------------
