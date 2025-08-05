@@ -1,0 +1,978 @@
+{
+  "brand_name": "maxgift",
+  "stores": [
+    {
+      "name_en": "Golf",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Yanga",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Emporium",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Fox",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Factory 54",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Ellesse",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Terminal X",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Timberland",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Guess",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Levis",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Desigual",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "DKNY",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Bogart",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Sam Edelman",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Femina",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "RubyBay",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "H&O",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Adika",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Bonita de Más",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Afrodita",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "American Eagle",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Superdry",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Concept Store",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Lacoste",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Intima",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Tommy Hilfiger",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Lee Cooper",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Fred Perry",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Mango",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Nautica",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Daphna Levinson",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Calvin Klein",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Replay",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Michael Kors",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Polgat",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Armani Exchange",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Arie",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Boss",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Diesel",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Paul & Shark",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": null,
+      "name_he": "מרכז הלבשה",
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Vilebrequin",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אופנה"
+    },
+    {
+      "name_en": "Blik",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Jacob",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Daka90",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Astral",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Queen Of Sheba",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Cafeneto",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Revo Fitness",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": null,
+      "name_he": "סינימה סיטי",
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Flow",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Dan Lounge",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Ijump",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "4Chef",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Waterland",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "בילויים ופנאי"
+    },
+    {
+      "name_en": "Flying Tiger",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אקססוריז"
+    },
+    {
+      "name_en": "Laster",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אקססוריז"
+    },
+    {
+      "name_en": "Tous",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אקססוריז"
+    },
+    {
+      "name_en": "Longchamp",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אקססוריז"
+    },
+    {
+      "name_en": null,
+      "name_he": "הבורסה לתכשיטים",
+      "logo": null,
+      "store_url": null,
+      "category": "אקססוריז"
+    },
+    {
+      "name_en": "Il Makiage",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "קוסמטיקה ולייף סטייל"
+    },
+    {
+      "name_en": "Pt",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "קוסמטיקה ולייף סטייל"
+    },
+    {
+      "name_en": "Mashbir",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Fox Home",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Golf & Co",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "שקם אלקטריק",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "עמינח",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Ace",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Food Appeal",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Homestyle",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "הום סנטר",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Lavan",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "סטימצקי",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Darlin",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Laline",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Autodepot",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "אלמ",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Sabon",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "דיל תאורה",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "גודניייט",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "American Comfort",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Kitan",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "עצמלה",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": null,
+      "name_he": "נעמן",
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Vardinon",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "לבית"
+    },
+    {
+      "name_en": "Lee Cooper Kids",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": "Petit Bateau",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": "Minene",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": null,
+      "name_he": "שילב",
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": "Gold & Kids",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": null,
+      "name_he": "עגליס",
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": "Place",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": "Mega Sport Kids",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": null,
+      "name_he": "מוצצים",
+      "logo": null,
+      "store_url": null,
+      "category": "ילדים"
+    },
+    {
+      "name_en": "Billabong",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Roxy",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Inter Jeans",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Foot Locker",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Rosen & Meets",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Havaianas",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Puma",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Reebok",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Brownie",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Raven",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Mega Sport",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Steve Madden",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Saucony",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Gali",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Asics",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Skechers",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Nine West",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Boardriders",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Originals",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Quiksilver",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Speedo",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Lady Comfort",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": null,
+      "name_he": "עמנואל",
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Birkenstock",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Converse",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Aldo",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "ספורט והנעלה"
+    },
+    {
+      "name_en": "Timberland",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Fox Home",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Laline",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": null,
+      "name_he": "שילב",
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Terminal X",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": null,
+      "name_he": "דיל תאורה",
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Mega Sport",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Artikim",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Foot Locker",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": null,
+      "name_he": "עגליס",
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "A Club",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Bakers Secret",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Yooz",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Waterland",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Emporium",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Pullies",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Muza",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Bumpers",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    },
+    {
+      "name_en": "Darlin",
+      "name_he": null,
+      "logo": null,
+      "store_url": null,
+      "category": "אונליין"
+    }
+  ]
+}

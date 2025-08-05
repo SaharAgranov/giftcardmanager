@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
+        .then(() => console.log("Service Worker registered"));
+    }
+    </script>
+
+    <title>{{ 'Edit Gift Card' if edit_mode else 'Add Gift Card' }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GiftCards">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/icon-192.png') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            background: #f9f9fb;
+            font-size: 16px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .form-control, .form-select {
+            border-radius: 12px;
+            font-size: 1rem;
+            padding: 0.75rem;
+        }
+        .btn {
+            font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+        }
+        .btn-success {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .container {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body class="container py-4">
+
+<h2>{{ 'Edit Gift Card' if edit_mode else 'Add a New Gift Card' }}</h2>
+<form method="POST" class="mt-3">
+
+    <!-- Target Selector -->
+    <div class="mb-3">
+        <label class="form-label">Add To</label>
+        <select name="target" class="form-select">
+            <option value="personal">My Cards</option>
+            {% if group_id %}
+            <option value="group">Family Cards</option>
+            {% endif %}
+        </select>
+    </div>
+
+    <!-- Brand Selector -->
+    <div class="mb-3">
+        <label class="form-label">Brand</label>
+        <select name="brand" class="form-select" required>
+            <option value="">-- Select Brand --</option>
+            {% for brand in brands %}
+                <option value="{{ brand }}" {% if card and card.brand == brand %}selected{% endif %}>
+                    {{ brand }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <!-- Store Name (Manual) -->
+    <div class="mb-3">
+        <label class="form-label">Store Name (Manual)</label>
+        <input type="text" name="store" class="form-control" value="{{ card.store if card else '' }}" placeholder="Optional store name">
+    </div>
+
+    <!-- Card Number -->
+    <div class="mb-3">
+        <label class="form-label">Card Number <span class="text-danger">*</span></label>
+        <input type="text" name="number" class="form-control" value="{{ card.number if card else '' }}" required>
+    </div>
+
+    <!-- CVV -->
+    <div class="mb-3">
+        <label class="form-label">CVV</label>
+        <input type="text" name="cvv" class="form-control" value="{{ card.cvv if card else '' }}">
+    </div>
+
+    <!-- Balance -->
+    <div class="mb-3">
+        <label class="form-label">Balance (₪)</label>
+        <input type="number" name="balance" class="form-control" value="{{ card.balance if card else '' }}">
+    </div>
+
+    <!-- Expiry -->
+    <div class="mb-3">
+        <label class="form-label">Expiration Date</label>
+        <input type="date" name="expiry" class="form-control" value="{{ card.expiry if card else '' }}">
+    </div>
+
+    <!-- Notes -->
+    <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea name="notes" class="form-control" rows="3">{{ card.notes if card else '' }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">{{ 'Update' if edit_mode else 'Save' }}</button>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary w-100 mt-2">Cancel</a>
+</form>
+
+<script src="{{ url_for('static', filename='js/add_card.js') }}"></script>
+</body>
+</html>

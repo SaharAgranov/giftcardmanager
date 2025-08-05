@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+      <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
+          .then(() => console.log("Service Worker registered"));
+      }
+      </script>
+
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GiftCards">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/icon-192.png') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Top Bar */
+        .d-flex.mb-4 {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Search Bar */
+        #searchInput {
+            border-radius: 20px;
+            padding-left: 1rem;
+            font-size: 1rem;
+        }
+        #searchResults {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        #searchResults .list-group-item {
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Card Styling */
+        .list-group-item {
+            border-radius: 12px !important;
+            margin-bottom: 0.75rem;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.1s ease;
+        }
+        .list-group-item:hover {
+            transform: scale(1.01);
+        }
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.4em 0.6em;
+            margin-left: 0.25rem;
+        }
+        .btn-sm {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+        }
+
+        /* Store Modal Styling */
+        #storeModal .modal-dialog {
+            max-width: 95%;
+        }
+
+        /* Floating Action Button (Add Card) */
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #198754;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-decoration: none;
+            z-index: 200;
+        }
+
+        /* General */
+        body {
+            background: #f9f9fb;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<body class="container py-2">
+
+<!-- Top Bar -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Your Gift Cards</h2>
+    <div>
+        <a href="{{ url_for('add_card') }}" class="btn btn-success btn-sm me-2">Add</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-danger btn-sm">Logout</a>
+    </div>
+</div>
+
+<!-- Search Bar -->
+<div class="mb-3 position-relative">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search stores...">
+    <div id="searchResults" class="list-group position-absolute w-100" style="display:none; max-height: 200px; overflow-y:auto; z-index: 1000;"></div>
+</div>
+
+<!-- Edit Card Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Gift Card</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editForm">
+          <input type="hidden" id="editCardId">
+          <input type="hidden" id="editCardTarget">
+          <div class="mb-3">
+            <label class="form-label">Store</label>
+            <input type="text" id="editStore" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Card Number</label>
+            <input type="text" id="editNumber" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Balance (₪)</label>
+            <input type="number" id="editBalance" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Expiry</label>
+            <input type="date" id="editExpiry" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Notes</label>
+            <textarea id="editNotes" class="form-control"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveEditBtn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Store Cards Modal -->
+<div class="modal fade" id="storeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="storeModalTitle">Cards for Store</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="storeModalBody"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Create group -->
+{% if not group_id or group_id == 'None' %}
+<div class="alert alert-info">
+    <p>You are not part of a family group.</p>
+    <form action="{{ url_for('create_group') }}" method="POST">
+        <button class="btn btn-primary">Create Family Group</button>
+    </form>
+</div>
+{% endif %}
+
+<!-- Wrap all cards for search -->
+<div id="cardsContainer">
+
+    <!-- Family Cards Section -->
+    {% if group_id %}
+        <h3 class="mt-4">Family Cards</h3>
+        {% if group_cards %}
+            <div class="list-group mb-4">
+                {% for card in group_cards %}
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>{{ card.store }}</strong>
+                            {% if card.brand %}
+                                <span class="badge bg-info text-dark ms-1">{{ card.brand }}</span>
+                            {% endif %}
+                            – {{ card.balance }} ₪
+                            <small class="text-muted">(Expires: {{ card.expiry }})</small>
+                            {% if card.notes %}
+                                <div class="text-muted small">Notes: {{ card.notes }}</div>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary edit-btn"
+                                    data-id="{{ card.id }}"
+                                    data-target="group"
+                                    data-store="{{ card.store }}"
+                                    data-number="{{ card.number }}"
+                                    data-balance="{{ card.balance }}"
+                                    data-expiry="{{ card.expiry }}"
+                                    data-notes="{{ card.notes }}">
+                                Edit
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-btn"
+                                    data-id="{{ card.id }}"
+                                    data-target="group">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No family cards yet.</p>
+        {% endif %}
+    {% endif %}
+
+    <!-- Invite Family Member Section -->
+    {% if group_id and group_owner == session.email %}
+    <div class="card p-3 mb-4">
+        <h5>Invite Family Member</h5>
+        <form method="POST" action="{{ url_for('invite_member') }}">
+            <div class="input-group">
+                <input type="email" name="invite_email" class="form-control" placeholder="Enter Gmail address" required>
+                <button class="btn btn-primary" type="submit">Invite</button>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+
+    <!-- Personal Cards Section -->
+    <h3 class="mt-4">My Personal Cards</h3>
+    {% if personal_cards %}
+        <div class="list-group">
+            {% for card in personal_cards %}
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>{{ card.store }}</strong>
+                        {% if card.brand %}
+                            <span class="badge bg-info text-dark ms-1">{{ card.brand }}</span>
+                        {% endif %}
+                        – {{ card.balance }} ₪
+                        <small class="text-muted">(Expires: {{ card.expiry }})</small>
+                        {% if card.notes %}
+                            <div class="text-muted small">Notes: {{ card.notes }}</div>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary edit-btn"
+                                data-id="{{ card.id }}"
+                                data-target="personal"
+                                data-store="{{ card.store }}"
+                                data-number="{{ card.number }}"
+                                data-balance="{{ card.balance }}"
+                                data-expiry="{{ card.expiry }}"
+                                data-notes="{{ card.notes }}">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger delete-btn"
+                                data-id="{{ card.id }}"
+                                data-target="personal">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No personal cards yet.</p>
+    {% endif %}
+
+</div> <!-- end #cardsContainer -->
+
+<!-- Floating Add Button -->
+<a href="{{ url_for('add_card') }}" class="fab">+</a>
+
+<!-- Pass stores data to JS -->
+<script>
+    const storesData = {{ stores|tojson|safe }};
+</script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
