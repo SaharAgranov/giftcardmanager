@@ -1,32 +1,147 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #e0e7ff, #f0fdf4);
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ============ Mobile-first polish for iPhone ============ */
+:root{
+  --bg:#f8f9fb;
+  --card:#ffffff;
+  --text:#111;
+  --muted:#6c757d;
+  --border:#e9ecef;
+  --brand:#198754; /* your green */
+  --radius:14px;
+  --shadow:0 1px 6px rgba(0,0,0,.06);
 }
 
-.card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Smooth scrolling & tap feel */
+html,body{height:100%;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-text-size-adjust:100%;
+  -webkit-tap-highlight-color: transparent; /* remove blue flash on iOS */
 }
 
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+/* Use a comfy readable size on phones */
+body, .form-control, .btn { font-size: 16px; }
+
+/* Container breathing room but not too wide */
+.container{
+  max-width: 720px;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
-.btn-primary {
-    background-color: #4f46e5;
-    border: none;
-    font-weight: 500;
-    border-radius: 8px;
+/* Sticky top bar (you already had one; this tightens it) */
+.d-flex.mb-4{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  padding: .6rem 0 .8rem;
+  backdrop-filter: saturate(180%) blur(6px);
 }
 
-.btn-primary:hover {
-    background-color: #4338ca;
+/* Titles become compact but readable */
+h2, h3{
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin: 0;
+  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+}
+
+/* Buttons: larger touch targets */
+.btn{
+  border-radius: 12px;
+}
+.btn-sm{
+  padding: .45rem .75rem;
+  font-weight: 600;
+}
+
+/* Search field + dropdown */
+#searchInput{
+  border-radius: 18px;
+  padding: .6rem .9rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+#searchInput:focus{ box-shadow: 0 0 0 .2rem rgba(25,135,84,.12); }
+
+#searchResults{
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+#searchResults .list-group-item{
+  padding: .7rem 1rem;
+  font-size: .98rem;
+}
+
+/* Cards (your list-group items) */
+.list-group-item{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+  margin-bottom: .75rem;
+  padding-top: .85rem;
+  padding-bottom: .85rem;
+  transition: transform .06s ease, box-shadow .15s ease;
+}
+.list-group-item:active{
+  transform: scale(0.99);
+}
+
+/* Badge for brand */
+.badge{
+  border-radius: 999px;
+  font-size: .72rem;
+  padding: .35em .6em;
+  vertical-align: middle;
+}
+
+/* “Expires … / Notes …” text tighter & readable */
+small.text-muted{ font-size: .82rem; }
+.text-muted.small{ font-size: .82rem; }
+
+/* Modal: full-ish width on phone */
+.modal-dialog{
+  margin: .75rem;
+}
+#editModal .modal-dialog,
+#storeModal .modal-dialog{
+  max-width: 640px;
+}
+
+/* Inputs inside modal */
+#editForm .form-control{
+  border-radius: 12px;
+  padding: .55rem .8rem;
+}
+
+/* Divider between sections */
+h3.mt-4{
+  margin-top: 1.25rem !important;
+  margin-bottom: .5rem;
+  color: #222;
+}
+
+/* iPhone safe-area padding if you add bottom bars later */
+@supports (padding: max(0px)){
+  body{ padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+}
+
+/* Optional: dark mode that follows system */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1114;
+    --card:#171a1e;
+    --text:#f2f3f5;
+    --muted:#aab2bd;
+    --border:#23262b;
+    --shadow: 0 1px 10px rgba(0,0,0,.4);
+  }
+  .btn-outline-danger{ color:#ff6b6b; border-color:#3a3f46; }
+  .btn-outline-danger:hover{ background:#3a3f46; }
 }
